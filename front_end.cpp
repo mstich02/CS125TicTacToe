@@ -24,15 +24,14 @@ int main()
 	while (loopy == 1)
 	{
 		printf("Would you like to play tic-tac-toe? (y/n) ");
-		scanf(" %c", &playagain);
+		scanf("%c", &playagain);
 		
 
 		if (playagain == 121)
 		{
 			
-
 			//Board size setup, allowing for larger boards
-			while (size_check == 1);
+			while (size_check == 1)
 			{
 				printf("what size square would you like?");
 				scanf("%d", &board_size);
@@ -52,6 +51,7 @@ int main()
 			//	//Win checker fun here(Current Board state pass)
 			//	// if statement to exit game runner and loopy on the basis of a win condition
 			//}
+			loopy = 0;
 		}
 		else
 		{
