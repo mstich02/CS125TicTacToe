@@ -4,15 +4,19 @@
 #include <math.h>
 #include <time.h>
 
-char playagain; //Check if the player wants to play again
+char playagain;						//|**********************|//
+int whosTurn;						//|Game Related Variables|//
+									//|**********************|//
 
 int row;							//|------------------|//
 int col;							//| Board state vars |//
 int board_size;						//|------------------|//
 
-int loopy = 1;						//|******************|//
-int size_check = 1;					//|     Loop vars    |//
-int game_runner =1 ;				//|******************|//
+int loopy = 1;						//|*********|//
+int size_check = 1;					//|Loop vars|//
+int game_runner =1 ;				//|*********|//
+
+ 
 
 
 int main()
