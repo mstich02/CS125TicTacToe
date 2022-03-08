@@ -1,4 +1,4 @@
-#include <ticTacToe.h>
+#include "ticTacToe.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -6,7 +6,7 @@
 
 // x is 19 o is 11
 //We used a prime number to calculate a win condition
-
+int winCheck(int total, int size, int dimention);
 
 int diagonalWin(int matrix[3][3],int size,int dimention){
 // Variables For the horizontal win condition
