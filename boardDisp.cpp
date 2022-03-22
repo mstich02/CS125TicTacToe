@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#include "ticTacToe.h"
+#include "ticTacToe.h" //Header caller
+#include <windows.h>
 
-
-int rowput;
-int colput;
+int rowput; //row input
+int colput; //column input
 
 char row1[3] = { ' ',' ',' ' };           //-------------------------------//
 char row2[3] = { ' ',' ',' ' };			 // Setup the board in a 3x3 grid //
@@ -16,11 +16,114 @@ int col;							   //-------------------------------//
 int matrix[3][3] = { {' ',' ',' '},{' ',' ',' '},{' ',' ',' '} };
 int validCheck = 0;
 
-int winconh;
-int winconv;
-int wincond;
-int wincon;
-int turntime;
+int winconh;  //Horizontal wincon
+int winconv;  //Vertical wincon
+int wincond;  //Diagonal wincon
+int wincon;   //Wincon checker
+int turntime; //Turn looper
+
+void winSong() //this is the result of me being bored during spring break
+{
+	//Timings
+	float quarter = 550;
+	float half = 2 * quarter;
+	float triplet = quarter / 3;
+	float whole = quarter * 4;
+	float eight = quarter / 2;
+	float sixteenth = quarter / 4;
+	//Scale
+	float C4 = 261.63;
+	float D4 = 293.67;
+	float E4 = 329.63;
+	float F4 = 349.23;
+	float G4 = 392.00;
+	float A4 = 444.00;
+	float B4 = 493.88;
+	float C5 = 523.25;
+	float D5 = 587.33;
+	float E5 = 659.26;
+	float F5 = 698.46;
+	float G5 = 783.99;
+	float A5 = 880.00;
+	float B5 = 987.77;
+	float C6 = 1046.5;
+	float D6 = 1174.7;
+	float E6 = 1318.5;
+	// Driver Code
+	int rep;
+	//Uncomment for pain
+	//Beep(15000, 5000);
+	for (rep = 0; rep < 2; rep++)
+	{
+		Beep(F5, quarter);
+		Sleep(50);
+		Beep(G5, quarter);
+		Sleep(50);
+		Beep(C5, quarter);
+		Sleep(50);
+		Beep(G5, quarter);
+		Sleep(50);
+		Beep(A5, quarter);
+		Sleep(50);
+		Beep(C6, triplet);
+		Beep(B5, triplet);
+		Beep(A5, triplet);
+		Sleep(50);
+		Beep(F5, quarter);
+		Sleep(50);
+		Beep(G5, quarter);
+		Sleep(50);
+		Beep(C5, half);
+		Sleep(50 + quarter);
+		Beep(C5, quarter / 2);
+		Beep(C5, quarter / 2);
+		Sleep(50);
+		Beep(D5, triplet);
+		Beep(F5, triplet);
+		Beep(F5, triplet);
+		Sleep(50);
+	}
+	Sleep(quarter);
+	Beep(D5, quarter / 2);
+	Beep(E5, quarter / 2);
+	Sleep(50);
+	Beep(F5, sixteenth);
+	Beep(F5, sixteenth);
+	Beep(G5, sixteenth);
+	Beep(E5, sixteenth + triplet);
+	Beep(D5, triplet);
+	Beep(C5, triplet + half);
+	Sleep(50 + quarter + eight);
+	Beep(D5, triplet);
+	Beep(D5, triplet);
+	Beep(E5, triplet);
+	Sleep(50);
+	Beep(F5, eight);
+	Beep(D5, quarter);
+	Sleep(50);
+	Beep(C5, eight);
+	Sleep(50);
+	Beep(C6, eight);
+	Sleep(eight);
+	Beep(C6, eight);
+	Sleep(eight);
+	Beep(G5, quarter);
+	Sleep(eight);
+	Beep(D5, sixteenth);
+	Beep(D5, sixteenth);
+	Beep(E5, sixteenth);
+	Beep(F5, sixteenth);
+	Sleep(50);
+	Beep(D5, eight);
+	Beep(F5, eight);
+	Beep(G5, eight);
+	Sleep(quarter);
+	Beep(E5, eight);
+	Beep(D5, eight);
+	Beep(C5, half);
+	Sleep(quarter + eight);
+
+}
 
 int main()
 {
@@ -49,7 +152,7 @@ int main()
 
 				if (rowput == 1) //Row 1 checker
 				{
-					if (row1[colput - 1] == 'x')
+					if (row1[colput - 1] == 'x') //Spot validity checker
 					{
 						printf("Invalid spot, try again\n");
 					}
@@ -267,4 +370,7 @@ int main()
 			}
 		}
 	}
+	winSong();
+	return 0;
 }
+
