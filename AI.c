@@ -10,7 +10,7 @@ int gameModeStart(){
   int exit = 0;
   
   printf("Do you want to play single or multiplayer? (s/m)\n");
-  scanf("%c",gameMode);
+  scanf("%c",&gameMode);
   gameMode = tolower(gameMode);
   
   while (exit == 0){
@@ -26,8 +26,19 @@ int gameModeStart(){
   }
 }
 
-int easyMode(int matrix[3][3], int size, int dimention){
-	srand(time(NULL));
+int errorCheck(int matrix[3][3], int x, int y, int z){
+  int	validCheck = 0;
+	
+  if (((matrix[(y-1)][(x-1)]) == 11)||((matrix[(y-1)][(x-1)]) == 19)){
+      return 0;
+  }
+  else{
+    return 1;
+  }    
+}
+mat easyMode(int matrix[3][3], int size, int dimention){
+	mat position;
+  srand(time(NULL));
 	int randX = rand()%(size);
 	int randY = rand()%(size);
 	int randZ = rand()%(dimention);
@@ -38,30 +49,8 @@ int easyMode(int matrix[3][3], int size, int dimention){
 	        int randZ = rand()%(dimention);
 	}
 //	return position
-  matrix[(randY-1)][(randX-1)] = 11;
-  return matrix;
+   position.row = randY;
+   position.col = randX;
+  return position;
 
 }
-
-//int hardMode(matrix, size, dimentions, turn
-// if player places on corner
-//int matrix
-//int size
-//	if(matrix[0][0] = change 
-	 
-// i fplayer places on edge
-// if player places on middle
-
-int errorCheck(int matrix[3][3], int x, int y, int z){
-  int	validCheck = 0;
-	
-	while (validCheck == 0){
-    if ((matrix[(y-1)][(x-1)]) != 11){
-        return 0;
-    }
-    else{
-      return 1;
-    }    
-  }
-} 
-
