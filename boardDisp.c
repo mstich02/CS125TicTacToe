@@ -373,8 +373,8 @@ int main()
 
                     mat position = easyMode(matrix, 3, 1);
 
-                    printf("Row: %d\n", position.row);
-                    printf("Col: %d\n", position.col);
+                    //printf("Row: %d\n", position.row);
+                   // printf("Col: %d\n", position.col);
 
                     rowput = position.row;
                     colput = position.col;
