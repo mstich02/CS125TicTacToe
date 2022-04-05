@@ -44,12 +44,14 @@ int main()
    			printf("It is X's turn\n");
    			while (validCheck == 0) //Check that the square is a valid choice to avoid overwriting
    			{
+        do{
    				printf("which row would you like it in?: "); //Row input
-   				scanf("%d", &rowput);
+   				scanf(" %d", &rowput);
    
    				printf("which column would you like it in?: "); //Col input
-   				scanf("%d", &colput);
-   
+   				scanf(" %d", &colput);
+                  
+       }while(isdigit == 0)
    				if (rowput == 1) //Row 1 checker
    				{
    					if (row1[colput - 1] == 'x') //Spot validity checker
@@ -213,6 +215,7 @@ int main()
    			}
    			else printf("INVALID INPUT");
    		}
+     }
   		printf("COL> 1   2  3\n"); //Print the current state of the board, go back to the top and swap turns
   		printf("ROW v");
   		printf("\n");
@@ -269,7 +272,6 @@ int main()
   				turntime = 9;
   			}
   		}
-    }
 	}
 	return 0;
 }
